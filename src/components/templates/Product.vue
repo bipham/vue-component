@@ -1,10 +1,17 @@
 <template>
-    <div class="card product-item">
+    <div class="card product-item" :class="classItem">
         <div class="card-img-feature">
             <ImageScaleCenter classOuter="img-product-outer" src="./../../src/assets/imgs/asus.jpg" alt=""></ImageScaleCenter>
         </div>
         <div class="card-block">
-
+            <div class="basic-info">
+                <div class="title-product">
+                    {{ title }}
+                </div>
+                <div class="price-product">
+                    {{ price }}
+                </div>
+            </div>
         </div>
         <div class="card-footer">
 

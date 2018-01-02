@@ -1,20 +1,10 @@
 <template>
-  <div id="app" class="row">
-    <div class="col-md-3">
-      <Product></Product>
-    </div>
-    <div class="col-md-3">
-      <Product></Product>
-    </div>
-    <div class="col-md-3">
-      <Product></Product>
-    </div>
-    <div class="col-md-3">
-      <Product></Product>
-    </div>
-    <div class="col-md-3">
-      <Product></Product>
-    </div>
+  <div id="app">
+    <!--<Product classItem="col-md-3" priceProduct="100000" titleProduct="    asus pro 2017 new    "></Product>-->
+    <!--<div class="list-book col-md-3" v-for="item in items" >-->
+      <!--<ImageBook  :item="item" :key="item.id" ></ImageBook>-->
+    <!--</div>-->
+    <Alert type="danger" icon="fas fa-exclamation" message="test dasd" dismissible="true"></Alert>
   </div>
 </template>
 
@@ -23,37 +13,29 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+        items: [{
+          id: "5a44c3f80ad769d7475ce574",
+          itemOuter: "anim",
+          bookImage: "irure",
+          bookItem: "id",
+          alt: "amet",
+          src: "http://placehold.it/32x32",
+          imgCoverBook: "laborum"
+      },
+          {
+              id: "5a44c3f80d2ae09c159a8cf5",
+              itemOuter: "elit",
+              bookImage: "fugiat",
+              bookItem: "culpa",
+              alt: "ut",
+              src: "http://placehold.it/32x32",
+              imgCoverBook: "dolore"
+          }]
     }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>

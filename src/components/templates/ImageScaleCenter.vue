@@ -1,7 +1,7 @@
 <template>
     <div class="img-outer" :class="classOuter">
-        <a class="img-inner">
-            <img class="img-scale-center" :class="classImg" :src="src" :alt="alt">
+        <a class="img-inner" :class="classImg">
+            <img class="img-scale-center" :src="src" :alt="alt">
         </a>
     </div>
 </template>
