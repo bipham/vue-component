@@ -1,6 +1,12 @@
 <template>
   <div id="app">
-    <Product classItem="col-md-3" priceProduct="100000" titleProduct="    asus pro 2017 new    "></Product>
+    <div class="your-class">
+      <Product classItem="col-md-3" :priceProduct="134000" :originalPriceProduct="140000" :showPercentSale="true" :prefix="false" titleProduct="    asus pro 2017 new    " classOuter="img-product-outer" src="./../../src/assets/imgs/asus.jpg" alt=""></Product>
+      <Product classItem="col-md-3" :priceProduct="135000" :originalPriceProduct="140000" :showPercentSale="true" :prefix="false" titleProduct="    asus pro 2017 new    " classOuter="img-product-outer" src="./../../src/assets/imgs/asus.jpg" alt=""></Product>
+      <Product classItem="col-md-3" :priceProduct="122000" :originalPriceProduct="140000" :showPercentSale="true" :prefix="false" titleProduct="    asus pro 2017 new    " classOuter="img-product-outer" src="./../../src/assets/imgs/asus.jpg" alt=""></Product>
+      <Product classItem="col-md-3" :priceProduct="98000" :originalPriceProduct="140000" :showPercentSale="true" :prefix="false" titleProduct="    asus pro 2017 new    " classOuter="img-product-outer" src="./../../src/assets/imgs/asus.jpg" alt=""></Product>
+      <Product classItem="col-md-3" :priceProduct="45000" :originalPriceProduct="140000" :showPercentSale="true" :prefix="false" titleProduct="    asus pro 2017 new    " classOuter="img-product-outer" src="./../../src/assets/imgs/asus.jpg" alt=""></Product>
+    </div>
     <!--<div class="list-book col-md-3" v-for="item in items" >-->
       <!--<ImageBook  :item="item" :key="item.id" ></ImageBook>-->
     <!--</div>-->

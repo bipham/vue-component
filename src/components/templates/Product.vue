@@ -1,7 +1,8 @@
 <template>
     <div class="card product-item" :class="classItem" :title="titleCard">
         <div class="card-img-feature">
-            <ImageScaleCenter classOuter="img-product-outer" src="./../../src/assets/imgs/asus.jpg" alt=""></ImageScaleCenter>
+            <ImageScaleCenter :src="src" :classImg="classImg" :classOuter="classOuter" :alt="alt"></ImageScaleCenter>
+            <slot name="titleCustom"></slot>
         </div>
         <div class="card-block">
             <div class="basic-info">
@@ -9,7 +10,15 @@
                     {{ title }}
                 </div>
                 <div class="price-product">
-                    {{ price }}
+                    <span class="current-price">
+                        {{ price }}
+                    </span>
+                    <span class="original-price">
+                        {{ originalPrice }}
+                    </span>
+                    <span class="sale-percent" v-if="showPercentSale">
+                        {{ salePercent }}
+                    </span>
                 </div>
             </div>
         </div>
@@ -22,6 +31,8 @@
 <script>
     import Product from './../scripts/Product'
     export default Product
+//    import ImageScaleCenter from './components/templates/ImageScaleCenter.vue'
+//    Vue.component('ImageScaleCenter', ImageScaleCenter)
 </script>
 
 <style scoped>
