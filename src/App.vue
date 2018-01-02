@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <!--<Product classItem="col-md-3" priceProduct="100000" titleProduct="    asus pro 2017 new    "></Product>-->
+    <Product classItem="col-md-3" priceProduct="100000" titleProduct="    asus pro 2017 new    "></Product>
     <!--<div class="list-book col-md-3" v-for="item in items" >-->
       <!--<ImageBook  :item="item" :key="item.id" ></ImageBook>-->
     <!--</div>-->
-    <Alert type="danger" icon="fas fa-exclamation" message="test dasd" dismissible="true"></Alert>
+    <!--<Alert type="warning" classAlert="alert-custom" icon="fas fa-exclamation" message="test dasd" dismissible="true"></Alert>-->
   </div>
 </template>
 

@@ -2,17 +2,13 @@
  * Created by nobikun1412 on 29/12/2017.
  */
 export default {
-    props: ['dismissible', 'type', 'icon', 'message'],
+    props: ['dismissible', 'type', 'classAlert', 'icon', 'message'],
     computed: {
         classes() {
-            console.log(this.type)
-            return (this.type ? 'alert-' + this.type : 'alert-danger')
+            return (this.type ? 'alert-' + this.type + ' ' + this.classAlert : 'alert-danger ' + this.classAlert)
         },
         isIcon() {
             return (this.icon ? true : false)
-        },
-        // message() {
-        //     return message
-        // }
+        }
     }
 }

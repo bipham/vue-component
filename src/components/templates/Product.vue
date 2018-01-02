@@ -1,5 +1,5 @@
 <template>
-    <div class="card product-item" :class="classItem">
+    <div class="card product-item" :class="classItem" :title="titleCard">
         <div class="card-img-feature">
             <ImageScaleCenter classOuter="img-product-outer" src="./../../src/assets/imgs/asus.jpg" alt=""></ImageScaleCenter>
         </div>
