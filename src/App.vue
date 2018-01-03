@@ -17,6 +17,14 @@
 <script>
 export default {
   name: 'app',
+    mounted() {
+        $('.your-class').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+//            autoplay: true,
+            autoplaySpeed: 2000,
+        })
+    },
   data () {
     return {
         items: [{
@@ -43,5 +51,7 @@ export default {
 </script>
 
 <style>
-
+  .slick-slide img {
+    display: inline-block;
+  }
 </style>

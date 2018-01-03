@@ -35,8 +35,8 @@
 <script>
     import Product from './../scripts/Product'
     export default Product
-//    import ImageScaleCenter from './components/templates/ImageScaleCenter.vue'
-//    Vue.component('ImageScaleCenter', ImageScaleCenter)
+    //    import ImageScaleCenter from './components/templates/ImageScaleCenter.vue'
+    //    Vue.component('ImageScaleCenter', ImageScaleCenter)
 </script>
 
 <style scoped>

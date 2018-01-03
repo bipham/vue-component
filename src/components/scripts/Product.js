@@ -1,4 +1,9 @@
 export default {
+    data() {
+        return {
+            isHover: false
+        }
+    },
     props: {
         // ['classItem', 'titleProduct', 'priceProduct', 'src', 'classOuter', 'classImg', 'alt', 'currency', 'prefix', 'showPercentSale'],
         classItem: String,
@@ -21,6 +26,10 @@ export default {
             type: Boolean,
             default: false
         }
+        // isHover: {
+        //     type: Boolean,
+        //     default: false
+        // }
     },
     computed: {
         titleCard() {
@@ -38,14 +47,6 @@ export default {
         salePercent() {
             return this.calcSalePercent(this.priceProduct, this.originalPriceProduct, this.showPercentSale)
         }
-    },
-    mounted() {
-        $('.your-class').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-        })
     },
     methods: {
         reFormatTitle(str) {
@@ -73,6 +74,9 @@ export default {
                 return '-' + Math.round(sale_percent,0) + '%'
             }
 
+        },
+        mouseOver: function(){
+            return this.isHover = !this.isHover;
         }
     }
 }
