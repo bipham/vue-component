@@ -1,14 +1,10 @@
 export default {
-    data() {
-        return {
-            isHover: false
-        }
-    },
+    // data() {
+    // },
     props: {
-        // ['classItem', 'titleProduct', 'priceProduct', 'src', 'classOuter', 'classImg', 'alt', 'currency', 'prefix', 'showPercentSale'],
         classItem: String,
         titleProduct: String,
-        priceProduct: Number,
+        salePrice: Number,
         originalPriceProduct: Number,
         src: String,
         classOuter: String,
@@ -25,11 +21,8 @@ export default {
         showPercentSale: {
             type: Boolean,
             default: false
-        }
-        // isHover: {
-        //     type: Boolean,
-        //     default: false
-        // }
+        },
+        id: Number
     },
     computed: {
         titleCard() {
@@ -39,13 +32,13 @@ export default {
             return this.reFormatTitle(this.titleProduct.trim())
         },
         price() {
-            return this.formatPrice(this.priceProduct, this.currency, this.prefix)
+            return this.formatPrice(this.salePrice, this.currency, this.prefix)
         },
         originalPrice() {
             return this.formatPrice(this.originalPriceProduct, this.currency, this.prefix)
         },
         salePercent() {
-            return this.calcSalePercent(this.priceProduct, this.originalPriceProduct, this.showPercentSale)
+            return this.calcSalePercent(this.salePrice, this.originalPriceProduct, this.showPercentSale)
         }
     },
     methods: {
@@ -68,15 +61,15 @@ export default {
                 }
             }
         },
-        calcSalePercent(price, original_price, showPercentSale) {
-            if (price && original_price && showPercentSale) {
-                let sale_percent = (1 - price/original_price) * 100
+        calcSalePercent(sale_price, original_price, showPercentSale) {
+            if (sale_price && original_price && showPercentSale) {
+                let sale_percent = (1 - sale_price/original_price) * 100
                 return '-' + Math.round(sale_percent,0) + '%'
             }
 
         },
-        mouseOver: function(){
-            return this.isHover = !this.isHover;
+        addToCart(id) {
+            this.$store.dispatch('addToCart', id)
         }
     }
 }
