@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
+import router from './route'
 import Product from './components/templates/Product.vue'
 import ImageBook from './components/templates/ImageBook.vue'
 import Alert from './components/templates/Alert.vue'
@@ -15,6 +16,7 @@ Vue.component('ShoppingCart', ShoppingCart)
 
 new Vue({
   el: '#app',
+    router,
   store,
   render: h => h(App)
 })

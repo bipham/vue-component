@@ -1,40 +1,22 @@
 <template>
   <div id="app">
-    <div class="row">
-      <!--// <Product classItem="col-md-3" :salePrice="134000" :originalPrice="140000" :showPercentSale="true" :prefix="false" titleProduct="    asus pro 2017 new    " src="./../../src/assets/imgs/asus.jpg" alt=""></Product>-->
-      <Product
-              v-for="product in products"
-              :key="product.id"
-              :id="product.id"
-              :titleProduct="product.title"
-              :src="product.image"
-              :alt="product.title"
-              :originalPriceProduct="product.price"
-              :salePrice="product.price_sale"
-              classItem="col-md-3"
-              :prefix="false"
-              :showPercentSale="true"
-      />
-    </div>
     <ShoppingCart />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-
+    import axios from 'axios';
 export default {
   name: 'app',
     mounted() {
-        $('.your-class').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-//            autoplay: true,
-            autoplaySpeed: 2000,
-        })
-    },
-    computed: {
-        products() { return this.$store.getters.products; },
-        inCart() { return this.$store.getters.inCart;}
+        axios.get('https://api.mlab.com/api/1/databases/vue-online-shop/collections/book/5a4cb159f36d287384b0e21f?apiKey=DqZnVxBibhCJwhNpj3XRwP7N5SuXaazT')
+            .then(response => {
+                console.log(response);
+            })
+            .catch(e => {
+                this.errors.push(e)
+            })
     }
 }
 </script>
