@@ -7,7 +7,7 @@
         <div class="card-block">
             <div class="basic-info">
                 <div class="title-product">
-                    {{ title }}
+                    <router-link :to="{ name: 'product', params: { id: id }}">{{ title }}</router-link>
                 </div>
                 <div class="price-product">
                     <span class="current-price">
