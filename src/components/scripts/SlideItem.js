@@ -1,10 +1,12 @@
 export default {
     props: {
       options: {
-          default: {
-              infinite: true,
-              slidesToShow: 3,
-              slidesToScroll: 1
+          default() {
+              return {
+                  infinite: true,
+                  slidesToShow: 3,
+                  slidesToScroll: 1
+              }
           }
       },
         message: {
@@ -13,7 +15,7 @@ export default {
         },
         classSlider: {
           type: String,
-            required: true
+            // required: true
         },
         titleSlider: {
           type: String
@@ -28,8 +30,21 @@ export default {
         }
     },
     mounted() {
-        $('.slider-items.' + this.classSlider + ' .slider').slick(this.options)
+        // if (this.classSlider) {
+        //     $('.slider-items.' + this.classSlider + ' .slider').slick(this.options)
+        // }
+        // else {
+        //     $('.slider').slick(this.options)
+        // }
     },
+    updated() {
+        if (this.classSlider) {
+            $('.slider-items.' + this.classSlider + ' .slider').slick(this.options)
+        }
+        else {
+            $('.slider').slick(this.options)
+        }
+    }
     // computed: {
     //     textAlign() {
     //         return

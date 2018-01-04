@@ -12,7 +12,7 @@ export default {
         alt: String,
         currency: {
             type: String,
-            default: 'VND'
+            default: '$'
         },
         prefix: {
             type: Boolean,
@@ -54,10 +54,10 @@ export default {
         formatPrice(price, currency, prefix) {
             if (price) {
                 if (prefix) {
-                    return currency + ' ' + price
+                    return currency + '' + price
                 }
                 else {
-                    return price + ' ' + currency
+                    return price + '' + currency
                 }
             }
         },

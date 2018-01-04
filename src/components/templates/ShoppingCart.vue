@@ -2,7 +2,12 @@
     <div class="shopping-card-area">
         <button class="btn btn-info" data-toggle="modal" data-target="#cartModal">
             <i class="fas fa-shopping-cart"></i>
+            Cart
             <span class="badge badge-pill badge-danger">{{ numberProducts }}</span>
+        </button>
+        <button class="btn btn-danger checkout" v-show="showCheckout">
+            Checkout
+            <!--<router-link :to="{ name: 'checkout', params: { id: id }}">Checkout</router-link>-->
         </button>
 
         <div id="cartModal" class="modal fade">

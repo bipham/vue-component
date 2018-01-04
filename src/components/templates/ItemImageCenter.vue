@@ -1,10 +1,10 @@
 <template>
     <div class="row item-image-center" :class="classItem">
-        <div class="col-md-3 float-left left-column">
+        <div class="col-md-4 float-left left-column">
             <slot name="leftColumn"></slot>
         </div>
         <div class="col-md-4 float-left center-column">
-            <ImageScaleCenter :src="src" :classImg="classImg" :classOuter="classOuter" :alt="alt"></ImageScaleCenter>
+            <ImageScaleCenter :src="src" :classImg="classImg" :classOuter="classOuter" :alt="alt" :height="height" :width="width"></ImageScaleCenter>
             <slot name="centerColumn"></slot>
         </div>
         <div class="col-md-4 float-right right-column">

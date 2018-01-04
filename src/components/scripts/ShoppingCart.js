@@ -1,4 +1,5 @@
 export default {
+    props: ['id'],
     computed: {
         inCart() {
             return this.$store.getters.inCart;
@@ -12,6 +13,9 @@ export default {
         },
         total() {
             return this.getTotalPrice()
+        },
+        showCheckout() {
+            return (this.getTotalProducts() > 0 ? true : false)
         }
     },
     methods: {

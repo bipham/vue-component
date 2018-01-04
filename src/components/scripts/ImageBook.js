@@ -1,5 +1,5 @@
 export default {
-    props: ['item'],
+    props: ['itemOuter', 'bookItem', 'bookImage', 'imgCoverBook', 'src', 'alt'],
     methods: {
         test() {
             console.log('hello')

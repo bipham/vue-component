@@ -1,0 +1,31 @@
+.card.product-item {
+    border: none;
+    text-align: center;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+.basic-info {
+    padding: 5px 10px;
+}
+
+.original-price {
+    font-size: 12px;
+}
+
+.sale-percent {
+    color: red;
+}
+
+.card-footer {
+    background: white;
+    border: none;
+    padding: 5px 10px;
+}
+
+.card.product-item:hover {
+    box-shadow: 0 0 20px #ffc10782;
+    transform: scale(1.03);
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}

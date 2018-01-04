@@ -6,3 +6,7 @@
 .table td, .table th {
     vertical-align: middle;
 }
+
+.shopping-card-area {
+    text-align: right;
+}

@@ -2,9 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 //Views:
-import HomeView from './pages/HomeView.vue'
-import NotFoundView from './pages/NotFound.vue'
-import ProductDetailView from './pages/ProductDetailView.vue'
+import HomeView from './pages/templates/HomeView.vue'
+import NotFoundView from './pages/templates/NotFound.vue'
+import ProductDetailView from './pages/templates/ProductDetailView.vue'
 
 Vue.use(Router)
 

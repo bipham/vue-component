@@ -1,0 +1,50 @@
+#homeSlider {
+    background: url(/src/assets/imgs/background/1.jpg) center no-repeat fixed;
+    background-size: cover;
+    margin: 0 auto;
+    height: calc(100vh - 140px);
+}
+
+.item-slider {
+    margin: 0 10px;
+}
+
+/*Top Slider*/
+.item-top-slider {
+    color: #fff;
+}
+
+.left-info-item-slider {
+    width: 100%;
+    text-align: right;
+    padding: 20px;
+}
+
+.item-top-view-story .title-item-slide {
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.link-story:hover {
+    color: #f07c29;
+}
+
+.title-item-slide {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.author-item-slide {
+    margin: 15px 0;
+}
+
+a.link-story, a.link-author {
+    color: white;
+}
+.link-author:hover {
+    color: #5cb85c;
+}
+
+.right-info-item-slider {
+    margin-top: 35%;
+}

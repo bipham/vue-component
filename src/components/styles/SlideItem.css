@@ -1,0 +1,9 @@
+.title-slider .title {
+    text-transform: uppercase;
+    color: rgba(0,0,0,.5);
+    letter-spacing: .1px;
+    font-size: 1.23077em;
+    font-family: Lato,sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,115 @@
+/*Style for header*/
+ul#main-navigation {
+    width: 400px;
+}
+
+header#header {
+    height: 140px;
+    background: #fff;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+header#header .header-top {
+    float: left;
+    width: 100%;
+    height: 90px;
+    padding-top: 30px;
+}
+
+.navigation-custom {
+    list-style: none;
+    margin-bottom: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#navigation-my-web a.nav-link {
+    color: rgba(0,0,0,0.4)!important;
+}
+
+.center-class.logo-webstite {
+    height: 60px;
+    left: calc( 50% - 108px / 2 );
+    position: absolute;
+}
+
+.img-logo-website {
+    height: 100%;
+}
+
+.navbar-custom-header {
+    display: inline;
+    float: right;
+    padding: 3px 0;
+    height: 100%;
+}
+
+.navbar-custom-header li {
+    display: inline-block;
+}
+
+/*-------------------------------*/
+
+
+/*header-fixing*/
+.menu-header {
+    display: none;
+}
+
+.menu-header.header-fixed {
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #fff;
+}
+
+.menu-nav-header {
+    padding: 12px;
+}
+
+.menu-header.header-fixed {
+    display: block;
+}
+
+.menu-header.header-fixed {
+    border-bottom: 1px solid #ccc;
+}
+
+.menu.menu-header.row {
+    margin: 0;
+    height: 65px;
+}
+/*-------------------------------*/
+
+
+/*-------------------------------*/
+footer {
+    float: left;
+    width: 100%;
+    background: #309F93;
+    color: #fff;
+    padding: 10px;
+}
+
+.copyright {
+    margin: 0;
+}
+/*-------------------------------*/
+
+.img-product-outer {
+    height: 250px;
+}
+
+.slick-slide img {
+    display: inline-block;
+}
+.slick-prev:before, .slick-next:before {
+    font-size: 50px;
+    color: #f84545;
+}

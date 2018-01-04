@@ -1,5 +1,5 @@
 <template>
-    <div class="img-outer" :class="classOuter">
+    <div class="img-outer" :class="classOuter" :style="{width: width, height: height}">
         <a class="img-inner" :class="classImg">
             <img class="img-scale-center" :src="src" :alt="alt">
         </a>
