@@ -34,10 +34,10 @@
                             </thead>
                             <tbody>
                                 <tr v-for="(item, index) in cart">
-                                    <th scope="row">{{ index }}</th>
+                                    <th scope="row">{{ index + 1 }}</th>
                                     <td>
                                         <span class="img-thumbnail-product">
-                                            <img :src="item.image" />
+                                            <img :src="item.img_feature" />
                                         </span>
                                     </td>
                                     <td>

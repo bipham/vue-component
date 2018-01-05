@@ -1,8 +1,18 @@
+.slick-prev {
+    left: -50px;
+}
+
 #homeSlider {
     background: url(/src/assets/imgs/background/1.jpg) center no-repeat fixed;
     background-size: cover;
     margin: 0 auto;
     height: calc(100vh - 140px);
+}
+#homeSlider .inner-section {
+    padding-top: calc( (100vh - 600px)/2 );
+    padding-bottom: calc( (100vh - 600px)/2 );
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .item-slider {
@@ -47,4 +57,22 @@ a.link-story, a.link-author {
 
 .right-info-item-slider {
     margin-top: 35%;
+}
+
+/*Hot Slide*/
+.item-book-img.slick-center {
+    transform: scale(1.18);
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.item-book-img {
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    top: 55px;
+    position: relative;
+}
+
+.slider-hot .slick-slider .slick-track {
+    height: 400px;
 }

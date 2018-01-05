@@ -1,8 +1,8 @@
 .book-item {
-    box-sizing: border-box;
-    -webkit-box-shadow: 0px 15px 30px -10px rgba(0,0,0,0.3);
-    -moz-box-shadow: 0px 15px 30px -10px rgba(0,0,0,0.3);
-    box-shadow: 0px 15px 30px -10px rgba(0,0,0,0.3);
+    /*box-sizing: border-box;*/
+    /*-webkit-box-shadow: 0px 15px 30px -10px rgba(0,0,0,0.3);*/
+    /*-moz-box-shadow: 0px 15px 30px -10px rgba(0,0,0,0.3);*/
+    /*box-shadow: 0px 15px 30px -10px rgba(0,0,0,0.3);*/
     z-index: 90;
     width: 100%;
     max-width: 160px;
@@ -40,4 +40,45 @@
 
 .item-book-img {
     position: relative;
+}
+
+.item-book-img {
+    height: 250px;
+    border: none;
+    text-align: center;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+.item-book-img:hover {
+    transform: scale(1.03);
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+.info {
+    padding: 10px 0;
+}
+
+.action {
+    opacity: 0;
+}
+
+.item-book-img:hover .action {
+    opacity: 1;
+}
+
+.author {
+    font-size: 14px;
+    color: rgb(171, 171, 171);
+    margin-bottom: 3px;
+}
+
+.title-book a {
+    color: rgb(41, 43, 44);
+}
+
+.author a {
+    color: rgb(171, 171, 171);
+    font-weight: 600;
 }

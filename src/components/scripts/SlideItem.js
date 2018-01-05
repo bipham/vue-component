@@ -27,27 +27,30 @@ export default {
         textAlign: {
           type: String,
             default: 'left'
+        },
+        updateData: {
+          type: Number,
+            default() {
+                return 0
+            }
         }
     },
-    mounted() {
-        // if (this.classSlider) {
-        //     $('.slider-items.' + this.classSlider + ' .slider').slick(this.options)
-        // }
-        // else {
-        //     $('.slider').slick(this.options)
-        // }
+    watch: {
+        updateData () {
+            return this.reSetSlick()
+        }
     },
+   methods: {
+        reSetSlick() {
+            $('.slider-items.' + this.classSlider + ' .slider').slick("unslick")
+        }
+   },
     updated() {
         if (this.classSlider) {
-            $('.slider-items.' + this.classSlider + ' .slider').slick(this.options)
+            $('.slider-items.' + this.classSlider + ' .slider').not('.slick-initialized').slick(this.options)
         }
         else {
-            $('.slider').slick(this.options)
+            $('.slider').not('.slick-initialized').slick(this.options)
         }
     }
-    // computed: {
-    //     textAlign() {
-    //         return
-    //     }
-    // }
 }

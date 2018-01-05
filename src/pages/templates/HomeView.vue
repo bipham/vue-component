@@ -13,7 +13,9 @@
                     titleSlider="Top Products"
                     textAlign="left"
                     colorTitle="white"
-                    classSlider="top-slider">
+                    classSlider="top-slider"
+                    :updateData="updateData"
+                    >
                 <ItemImageCenter
                         classItem="item-top-slider"
                         v-for="product in topProducts"
@@ -53,7 +55,7 @@
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 2000,
-            slidesToShow: 3,
+            slidesToShow: 4,
             responsive: [
             {
             breakpoint: 768,
@@ -75,7 +77,9 @@
             }
             ]
             }"
-                       classSlider="slider-top">
+                       classSlider="slider-top"
+                       :updateData="updateData"
+            >
                 <Product
                         v-for="product in phoneProducts"
                         :key="product.id"
@@ -94,13 +98,44 @@
 
         <Section idSection="hotBookSlider" classInnerSection="hot-book-slider">
             <SlideItem
-                       classSlider="slider-hot">
+                    :options="{
+            centerMode: true,
+  centerPadding: '60px',
+  slidesToShow: 5,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+            }"
+                       classSlider="slider-hot" :updateData="updateData">
                 <ImageBook
                         v-for="product in topProducts"
                         :key="product.id"
                         :id="product.reId"
+                        :titleProduct="product.title"
                         :src="product.img_feature"
                         :alt="product.title"
+                        :originalPriceProduct="product.price"
+                        :salePrice="product.price_sale"
+                        :prefix="false"
+                        :showPercentSale="true"
+                        :author="product.author.name"
                 />
             </SlideItem>
         </Section>
@@ -113,17 +148,28 @@
         data () {
             return {
                 topProducts: [],
-                phoneProducts: []
+                phoneProducts: [],
+                updateData: 0
+            }
+        },
+        watch: {
+            topProducts() {
+                this.updateData++
+            },
+            phoneProducts() {
+                this.updateData++
             }
         },
         computed: {
             products() { return this.$store.getters.products; },
             inCart() { return this.$store.getters.inCart;}
         },
-        mounted () {
-            axios.get('https://api.mlab.com/api/1/databases/vue-online-shop/collections/Product?q={%22category.name%22:%20%22book%22}&l=3&apiKey=DqZnVxBibhCJwhNpj3XRwP7N5SuXaazT&pretty=true')
+        beforeCreate () {
+            axios.get('https://api.mlab.com/api/1/databases/vue-online-shop/collections/Product?q={%22category.name%22:%20%22book%22}&l=8&apiKey=DqZnVxBibhCJwhNpj3XRwP7N5SuXaazT&pretty=true')
                 .then(response => {
                     this.topProducts = response.data
+                    this.updateProductsStock(this.topProducts)
+
                 })
                 .catch(e => {
                     this.errors.push(e)
@@ -131,11 +177,17 @@
             axios.get('https://api.mlab.com/api/1/databases/vue-online-shop/collections/Product?q={%22category.name%22:%20%22Phone%22}&l=7&apiKey=DqZnVxBibhCJwhNpj3XRwP7N5SuXaazT&pretty=true')
                 .then(response => {
                     this.phoneProducts = response.data
+                    this.updateProductsStock(this.phoneProducts)
                 })
                 .catch(e => {
                     this.errors.push(e)
                 })
         },
+        methods: {
+            updateProductsStock(new_products) {
+                this.$store.dispatch('updateProductsStock', new_products)
+            }
+        }
     }
 </script>
 

@@ -2,25 +2,16 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
-
 export default new Vuex.Store({
     state: {
-    products: [
-            { id: 1, title: 'An Item', image: '//placehold.it/200', price: 140000, price_sale: 120000 },
-            { id: 2, title: 'Thing', image: '//placehold.it/200', price: 169000, price_sale: 90000},
-            { id: 3, title: 'Doo-dad', image: '//placehold.it/200', price: 149000, price_sale: 79000 },
-            { id: 4, title: 'Other thing', image: '//placehold.it/200', price: 129000, price_sale: 49000 },
-            { id: 9, title: 'Other thing', image: '//placehold.it/200', price: 129000, price_sale: 49000 },
-            { id: 5, title: 'Other thing', image: '//placehold.it/200', price: 129000, price_sale: 49000 },
-            { id: 6, title: 'Other thing', image: '//placehold.it/200', price: 129000, price_sale: 49000 },
-            { id: 7, title: 'Other thing', image: '//placehold.it/200', price: 129000, price_sale: 49000 },
-            { id: 8, title: 'Other thing', image: '//placehold.it/200', price: 129000, price_sale: 49000 },
-        ],
+        products: [],
         inCart: [],
+        productItem: {}
     },
     getters: {
         products: state => state.products,
         inCart: state => state.inCart,
+        productItem: state => state.productItem,
     },
     mutations: {
         ADD_TO_CART(state, id) {
@@ -55,6 +46,11 @@ export default new Vuex.Store({
         },
         UPDATE_QUANTITY(state, data) {
             state.inCart[data.index]['quantity'] = data.value;
+        },
+        UPDATE_PRODUCTS_STOCK(state, new_products) {
+            new_products.map((new_product) => {
+                state.products.push(new_product)
+            });
         }
     },
     actions: {
@@ -66,6 +62,9 @@ export default new Vuex.Store({
         },
         updateQuantity(context, data) {
             context.commit('UPDATE_QUANTITY', data)
+        },
+        updateProductsStock(context, new_products) {
+            context.commit('UPDATE_PRODUCTS_STOCK', new_products)
         }
     }
 })

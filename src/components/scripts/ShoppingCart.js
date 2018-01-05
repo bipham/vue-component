@@ -20,11 +20,12 @@ export default {
     },
     methods: {
         getDetailCart() {
+            console.log('products: ' + this.$store.getters.products)
             return this.$store.getters.inCart.map((cartItem) => {
                 return this.$store.getters.products.find((productItem) => {
-                    if (cartItem.id === productItem.id) {
+                    if (cartItem.id === productItem.reId) {
                         productItem.quantity = cartItem.quantity;
-                        return cartItem = productItem.id
+                        return cartItem = productItem.reId
                     }
                 });
             });
