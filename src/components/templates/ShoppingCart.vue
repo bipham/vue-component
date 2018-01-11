@@ -6,8 +6,7 @@
             <span class="badge badge-pill badge-danger">{{ numberProducts }}</span>
         </button>
         <button class="btn btn-danger checkout" v-show="showCheckout">
-            Checkout
-            <!--<router-link :to="{ name: 'checkout', params: { id: id }}">Checkout</router-link>-->
+            <router-link class="link-checkout" :to="{ path: '/checkout' ,name: 'Checkout' }">Checkout</router-link>
         </button>
 
         <div id="cartModal" class="modal fade">
@@ -62,7 +61,9 @@
                         </table>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Check out</button>
+                        <button type="button" class="btn btn-primary">
+                            <router-link class="link-checkout" :to="{ path: '/checkout' ,name: 'Checkout' }">Checkout</router-link>
+                        </button>
                     </div>
                 </div>
             </div>

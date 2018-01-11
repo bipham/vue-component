@@ -1,0 +1,15 @@
+.price-product {
+    font-size: 27px;
+}
+
+.description-product {
+    padding: 10px 0 20px;
+}
+
+.original-price {
+    font-size: 18px;
+}
+
+.sale-percent {
+    color: red;
+}

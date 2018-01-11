@@ -48,7 +48,7 @@
     margin: 15px 0;
 }
 
-a.link-story, a.link-author {
+.link-story, a.link-author {
     color: white;
 }
 .link-author:hover {
@@ -75,4 +75,8 @@ a.link-story, a.link-author {
 
 .slider-hot .slick-slider .slick-track {
     height: 400px;
+}
+
+.slider-hot .slick-next, .slider-hot .slick-prev {
+    top: 100px;
 }

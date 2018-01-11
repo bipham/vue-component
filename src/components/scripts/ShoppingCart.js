@@ -18,9 +18,14 @@ export default {
             return (this.getTotalProducts() > 0 ? true : false)
         }
     },
+    watch: {
+        inCart() {
+            this.getTotalProducts()
+            this.getTotalPrice()
+        }
+    },
     methods: {
         getDetailCart() {
-            console.log('products: ' + this.$store.getters.products)
             return this.$store.getters.inCart.map((cartItem) => {
                 return this.$store.getters.products.find((productItem) => {
                     if (cartItem.id === productItem.reId) {
@@ -34,6 +39,9 @@ export default {
             return this.cart.reduce((acc, cur) => acc + cur.price*cur.quantity, 0);
         },
         getTotalProducts() {
+                if (this.inCart.length == 0) {
+                    return 0
+                }
                 return this.inCart.reduce((acc, cur) => acc + cur.quantity, 0);
         },
         removeProductFromCart(index) {

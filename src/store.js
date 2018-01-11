@@ -51,6 +51,9 @@ export default new Vuex.Store({
             new_products.map((new_product) => {
                 state.products.push(new_product)
             });
+        },
+        EMPTY_CART(state) {
+            state.inCart = []
         }
     },
     actions: {
@@ -65,6 +68,9 @@ export default new Vuex.Store({
         },
         updateProductsStock(context, new_products) {
             context.commit('UPDATE_PRODUCTS_STOCK', new_products)
+        },
+        emptyCart(context) {
+            context.commit('EMPTY_CART')
         }
     }
 })

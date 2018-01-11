@@ -113,3 +113,8 @@ footer {
     font-size: 50px;
     color: #f84545;
 }
+
+
+.main.main-page {
+    min-height: calc( 100vh - 184px);
+}

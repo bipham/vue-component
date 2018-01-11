@@ -31,9 +31,7 @@
                         height="360px">
                     <div slot="leftColumn" class="left-info-item-slider float-left">
                         <h6 class="title-item-slide">
-                            <a href="#" class="link-story">
-                                {{ product.title }}
-                            </a>
+                            <router-link class="link-story" :to="{ name: 'product', params: { id: product.reId }}">{{ product.title }}</router-link>
                         </h6>
                         <div class="author-item-slide">
                             by <a href="#" class="link-author">{{ product.author.name }}</a>
@@ -143,6 +141,7 @@
 </template>
 
 <script>
+    import NProgress from 'nprogress'
     import axios from 'axios';
     export default {
         data () {
@@ -165,11 +164,12 @@
             inCart() { return this.$store.getters.inCart;}
         },
         beforeCreate () {
+            NProgress.start();
             axios.get('https://api.mlab.com/api/1/databases/vue-online-shop/collections/Product?q={%22category.name%22:%20%22book%22}&l=8&apiKey=DqZnVxBibhCJwhNpj3XRwP7N5SuXaazT&pretty=true')
                 .then(response => {
                     this.topProducts = response.data
                     this.updateProductsStock(this.topProducts)
-
+                    NProgress.done();
                 })
                 .catch(e => {
                     this.errors.push(e)
