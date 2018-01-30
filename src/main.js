@@ -15,6 +15,8 @@ import ItemImageCenter from './components/templates/ItemImageCenter.vue'
 import Gallery from './components/templates/Gallery.vue'
 import ProductDetail from './components/templates/ProductDetail.vue'
 import Section from './components/templates/Section.vue'
+import PanelInfo from './components/templates/PanelInfo.vue'
+import DataTable from './components/templates/DataTable.vue'
 
 // Vue.component('Slick', Slick)
 Vue.component('Product', Product)
@@ -27,6 +29,8 @@ Vue.component('ItemImageCenter', ItemImageCenter)
 Vue.component('Gallery', Gallery)
 Vue.component('ProductDetail', ProductDetail)
 Vue.component('Section', Section)
+Vue.component('PanelInfo', PanelInfo)
+Vue.component('DataTable', DataTable)
 
 axios.interceptors.request.use(function (config) {
     NProgress.start();
