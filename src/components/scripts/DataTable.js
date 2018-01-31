@@ -11,36 +11,27 @@ export default {
     props: ['id', 'tableData', 'tableColumn', 'otherOptions', 'static'],
     computed: {
       options() {
+          this.optionsTable = {}
           this.optionsTable.data = this.tableData
           this.optionsTable.columns = this.tableColumn
           this.optionsTable = Object.assign(this.optionsTable, this.otherOptions)
           console.log('changed')
           return this.optionsTable;
+      },
+      reRenderTable() {
+
       }
     },
     watch: {
         'tableData': function() {
-            if (this.static) {
-                this.bTable.clear()
-                    .rows.add(this.tableData)
-                    .draw();
-            }
+
         },
         'tableColumn': function () {
-            let id = this.id
-            alert(this.static)
-            this.bTable.destroy();
-            $('#' + id).empty(); // empty in case the columns change
-            this.bTable = $('#' + id).DataTable({
-                columns: this.tableColumn
-            });
-            this.bTable.clear()
-                .rows.add(this.tableData)
-                .draw();
+
         }
     },
     beforeUpdate() {
-
+        console.log('beforUpdate')
     },
     mounted() {
         let id = this.id
@@ -83,15 +74,19 @@ export default {
         // } );
     },
     updated() {
+        console.log('updated')
+        let id = this.id
+        if (this.static) {
+            return this.bTable.clear()
+                .rows.add(this.tableData)
+                .draw();
+        }
+        else {
+            this.bTable.destroy();
+            $('#' + id).empty(); // empty in case the columns change
+            return this.bTable = $('#' + id).DataTable(this.options);
+        }
     },
     methods: {
-        reRenderTable(options) {
-            // let id = this.id
-            // this.bTable = $('#' + id).DataTable(this.options)
-            // alert(this.static)
-            // this.bTable.destroy();
-            // $('#' + id).empty(); // empty in case the columns change
-            // this.bTable = $('#' + id).DataTable(options);
-        }
     }
 }
