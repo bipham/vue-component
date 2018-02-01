@@ -1,0 +1,52 @@
+.editable .data_cell{
+    display: inline-block;
+}
+
+.editable .update_cell, .editable .btn-update-cell{
+    display: none;
+}
+
+.editable.selected_cell .data_cell{
+    display: none;
+}
+
+.editable.selected_cell .update_cell, .editable.selected_cell .btn-update-cell{
+    display: inline-block;
+}
+
+.btn-update-cell {
+    margin-top: 10px;
+}
+
+.overlay-table {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #868e96bf;
+    top: 0;
+    left: 0;
+    /* opacity: 0.7; */
+    z-index: 99999;
+}
+
+.hidden {
+    display: none;
+}
+
+.b-table-custom {
+    position: relative;
+}
+
+.message-processing {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    bottom: 50%;
+    background: white;
+    width: 220px;
+    font-size: 20px;
+    padding: 20px 10px;
+    opacity: 1;
+    color: #28a745;
+}

@@ -32,21 +32,9 @@ Vue.component('Section', Section)
 Vue.component('PanelInfo', PanelInfo)
 Vue.component('DataTable', DataTable)
 
-axios.interceptors.request.use(function (config) {
-    NProgress.start();
-    return config;
-}, function (error) {
-    return Promise.reject(error);
-});
-
-axios.interceptors.response.use(function (response) {
-    NProgress.done();
-    return response;
-}, function (error) {
-    return Promise.reject(error);
-});
-
-new Vue({
+const home = require('./pages/js/home')
+$.extend(home)
+var vueApp = new Vue({
   el: '#app',
   router,
   store,
